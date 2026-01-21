@@ -55,9 +55,9 @@ jobs:
  
     - name: Build, tag, and push image to Amazon ECR
       run: |
-        sed -i "s|<access_key_id>|${{secrets.AWS_ACCESS_KEY_ID}}|g" ./aws/taskdef.json
-        sed -i "s|<secret_access_key>|${{secrets.AWS_SECRET_ACCESS_KEY}}|g" ./aws/taskdef.json
-        sed -i "s|<session_token>|${{secrets.AWS_SESSION_TOKEN}}|g" ./aws/taskdef.json
+        sed -i "s|<access_key_id>|${{secrets.AWS_ACCESS_KEY_ID}}|g" ./.aws/taskdef.json
+        sed -i "s|<secret_access_key>|${{secrets.AWS_SECRET_ACCESS_KEY}}|g" ./.aws/taskdef.json
+        sed -i "s|<session_token>|${{secrets.AWS_SESSION_TOKEN}}|g" ./.aws/taskdef.json
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
